@@ -1,0 +1,6 @@
+{
+  "name": "Toe Tap Counter",
+  "description": "Real-time football toe tap counter using YOLO pose estimation and computer vision.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
