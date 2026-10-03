@@ -58,18 +58,5 @@ The state machine and geometry utilities are decoupled from device hardware, all
 Live Interactive Preview Ready:
 The live emulator environment has been compiled with compile_applet and displays an interactive real-time CV visualizer and state machine simulation right in your streaming browser view!
 
-Project Overview:
-Dual-Threshold Hysteresis State Machine (lib/detection/toe_tap_detector.dart):
-: Foot touches the ball boundary 
- transition to CONTACT increments counter exactly once.
-Debouncing: Remaining on the ball across subsequent frames keeps the state in CONTACT without triggering duplicate counts.
- (
-): Foot must pull away past the larger boundary to transition into RELEASED, eliminating jitter and frame-to-frame noise.
-In-Flight Mutex Throttler (lib/camera/camera_frame_throttler.dart):
-Prevents camera frames (30 FPS) from queuing up in memory while the mobile ML model runs (~15–20 FPS). Dropped frames are immediately discarded without lag.
-Temporal Occlusion Buffer (lib/detection/football_detector.dart):
-Holds the last known ball center for up to 4 consecutive frames when the foot partially covers the football, preventing state drops during contact.
-100% Deterministic Testing (test/toe_tap_detector_test.dart):
-The state machine and geometry utilities are decoupled from device hardware, allowing instant local testing without an attached camera or weights file.
-Live Interactive Preview Ready:
+
 The live emulator environment has been compiled with compile_applet and displays an interactive real-time CV visualizer and state machine simulation right in your streaming browser view!
